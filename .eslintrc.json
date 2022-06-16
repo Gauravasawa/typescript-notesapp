@@ -8,7 +8,8 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:import/typescript"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,12 +19,23 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+
   "plugins": ["react", "react-hooks"],
   "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".tsx", ".ts"]
+        "extensions": [".tsx", ".jsx", ".js", ".ts"]
       }
     ],
     "react/react-in-jsx-scope": "off",
@@ -32,5 +44,16 @@
     "quotes": ["error", "single"],
     "no-duplicate-imports": "error",
     "no-unreachable": "error"
+  },
+
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver":{
+      "node":{
+"extensions":[".js", ".json", ".tsx", ".ts"]
+      }
+    }
   }
 }
