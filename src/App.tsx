@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
@@ -14,6 +13,7 @@ function App() {
       date: new Date().toString(),
     },
   ]);
+
   return <Header />;
 }
 
