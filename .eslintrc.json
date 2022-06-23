@@ -8,6 +8,7 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
+    "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:import/typescript"
   ],
@@ -19,11 +20,15 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-
-  "plugins": ["react", "react-hooks"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "prettier"
+  ],
   "rules": {
     "import/extensions": [
       "error",
+     
       "ignorePackages",
       {
         "js": "never",
@@ -35,24 +40,63 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".tsx", ".jsx", ".js", ".ts"]
+        "extensions": [
+          ".tsx",
+          ".jsx",
+          ".js",
+          ".ts"
+        ]
       }
     ],
+      "no-redeclare": "off",
+    "react-hooks/rules-of-hooks": "error",
     "react/react-in-jsx-scope": "off",
     "camelcase": "error",
     "spaced-comment": "error",
-    "quotes": ["error", "single"],
+    "prettier/prettier": "error",
+    "quotes": [
+      2,
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
     "no-duplicate-imports": "error",
-    "no-unreachable": "error"
+    "no-unreachable": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+    "linebreak-style": [2, "windows"],
+    "global-require": 0,
+    "eslint linebreak-style": [
+      0,
+      "error",
+      "windows"
+    ],
+    "arrow-body-style": "off"
+    
   },
-
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
     },
-    "import/resolver":{
-      "node":{
-"extensions":[".js", ".json", ".tsx", ".ts"]
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".json",
+          ".tsx",
+          ".ts"
+        ]
       }
     }
   }

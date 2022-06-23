@@ -1,16 +1,20 @@
+/* eslint-disable linebreak-style */
+import { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import { Note } from './components/models/note.model';
 
 function App() {
-  const a = 10;
-
-  const b = 5;
-
-  return (
-    <div>
-      <h1>{a}</h1>
-      <h1>{b}</h1>
-    </div>
-  );
+  const [notes, setNotes] = useState<Note[]>([
+    {
+      id: new Date().toString(),
+      title: 'Meetings',
+      text: 'Schedule Meeting',
+      color: '#dfdfdf',
+      date: new Date().toString(),
+    },
+  ]);
+  return <Header />;
 }
 
 export default App;
