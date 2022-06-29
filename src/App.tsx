@@ -1,10 +1,11 @@
 function App() {
- 
   const a = 30;
+  const b = 10;
 
   return (
     <>
-     {a}
+      {a}
+      {b}
     </>
   );
 }
